@@ -74,5 +74,15 @@
         
         ---------------------------------------------------------------------------------------------------
         ---------------------------------------------------------------------------------------------------
+                
+         // https://www.geeksforgeeks.org/rounding-off-errors-java/
+
+        // float and double data types implement IEEE floating point 754 specification.
+
+        // https://docs.oracle.com/cd/E19957-01/806-3568/ncg_goldberg.html
+                
+        // Read why IEEE 754 is very important in floating point arithmetic operations (very important)
+               
+        
         
         
