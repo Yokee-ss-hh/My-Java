@@ -1,0 +1,36 @@
+DAY1 : 10-08-2022
+
+
+JVM, JRE, JDK Functionalities
+Naming Conventions
+{
+packages - small case
+classes, interfaces - PascalCase
+methods - camelCase
+variables - should not start with $ and _ , follows camelCase
+constants - All capital letter words with _ in between
+}
+
+Data Types
+{
+byte - 1 byte - default = 0
+short - 2 bytes - default = 0
+char - 2 bytes - default = '\u0000'
+int - 4 bytes - default = 0
+long - 8 bytes - default = 0L or 0l
+float - 4 bytes - default = 0.0f
+double - 8 bytes - default = 0.0d
+bool - 1 bit -default = false
+
+Normal floating points without any 'f' or 'd' at the last is treated as double
+float supports upto 5 values as precision after .
+double supports upto 15 values as precision after.
+float/double values supports values in terms of e/E
+}
+
+Type Conversions
+{
+
+}
+
+
