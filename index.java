@@ -182,13 +182,24 @@
 
          // The above all lines gives o/p as  "class java.lang.Integer" as i said in line 168
 
-         System.out.println(21+'F');
+         System.out.println(21+'F'); // prints 91 as by default arithmetic operations on char results in integer
          System.out.println(((Object)(21+'F')).getClass()); // prints class java.lang.Integer
-         System.out.println('A'+'B'); prints 131
+         System.out.println('A'+'B'); // prints 131 as arithmetic operations on char results in integer
          char c1 = 'A';
          char c2 = 'B';
-         char c3 = 'A'+'B'; // prints '?'
+         System.out.println(c1); // prints A
+         System.out.println(c2); // prints B
+         // char c3 = c1 + c2;  This raises error as c1+c2 gives integer , that integer we are trying to keep in char, we need to typecast it inorder to store
+         char c3 = (char)(c1+c2); // Now this works 
          System.out.println(c3); 
+ 
+         char c = 48;
+         char d = 54;
+         System.out.println(c); // prints 0 as 48 in decimal matches to 0 in characters in ascii table
+         System.out.println(d); // prints 6 as 54 in decimal matches to 6 in characters in ascii table
+         char e = (char)(c+d); // c+d = 102 in decimal that matches to character 'f' in ascii table
+         System.out.println(e); // prints 102
+
          // Generally char+int = int acc to line 168, but we are storing in char, so type casting implicitly occurs 
 
          // int + byte = int, if we want int + byte as byte , we need to cast into byte
@@ -315,7 +326,8 @@
 
         -----------------------------------------------------------------------------------------------------------------------------
         -----------------------------------------------------------------------------------------------------------------------------
-        // Now Divsion and Modulo Operators : 
+        // Now Divsion and Remainder Operators : 
+        // NOTE : There is no modulo operator in java by default, We can use Math.floorDiv(a,b) for modulo operations.
                 
         System.out.println(21/11); // 1
         System.out.println(-21/11); // -1
@@ -343,21 +355,22 @@
         // -num1 % num2 = -result
         // num1 % -num2 = result
         // -num1 % -num2 = -result
-      
-        // Formula : mod(a,n) = a - {n * Floor(a/n)}
 
+        float a = 2.32f;
+
+        float b = 54.32f;
+
+        float c = a/b;
+
+        float d = a%b;
+
+        System.out.println(c); // prints 0.042709865
+        System.out.println(d); // 2.32
         
-
-
-
-        
-
-        
-
-
-         
+        // The above mentioned formulas are all applicable to float and double values also...
                 
         ******************************************************************************************************************************
+        
         
 
          
