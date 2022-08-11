@@ -167,6 +167,11 @@
          boolean bool = true;
          
          //<---------------- BIG NOTE : Acc to Oracle, Binary arithmetic operations on char and byte (and short) promote to int ----------------------->
+         //<---- Arithmetic operators on any 2 datatypes will give o/p in terms of larger datatype in b/w 2 of them -------->
+         // <-- Let's say : byte b = 21; int i = 4321; Adding both give o/p as 4342 that is 'int' as 'int' is greater in b/w 'byte' and 'int'.--->
+         // <--The above line is the same reason why i = i+1 needs narrowing casting but i++ do not -->
+         // <-- Read this blog to understand more about the above line (https://www.geeksforgeeks.org/difference-x-xx1-java/)-->
+         // <--- x++ casting is done by java internally, For, x=x+1 we need to do manual casting ---->
          // ASCII Table : <----------------https://www.cs.cmu.edu/~pattis/15-1XX/common/handouts/ascii.html---------------------------->
           
          // Addition :
@@ -222,10 +227,11 @@
 
          // How int, float, byte, short, long, double works on char
          byte b0 = (byte)(b + c);
-         // we need to narrow cast as byte memory is lower than that of char memory, byte-1 byte < char-2 bytes , b0 prints 92
+         // Arithmetic operator on byte and char will result in int . So b+c result in an integer 92. But we gave byte b0 and we are trying to store in int
+         // That's why we are doing casting
          int b1 = i + c;
-         // ascii value of G is 71 , so i+c = 4321+71 = 4392 stores in b1
-         short b3 = (short)(s+c); // prints 302 , in type casting order short comes before char, so we need to typecast it
+         // int + char will result in int (Read Line 169,170) 
+         short b3 = (short)(s+c); // prints 302, (Acc to line 169,170 : short + char -> int, but we cannot store that integer in short, so narrowing casting is done)
 
          long b4 = l + c;
 
@@ -370,7 +376,7 @@
         // The above mentioned formulas are all applicable to float and double values also...
                 
         ******************************************************************************************************************************
-        
+        // 
         
 
          
