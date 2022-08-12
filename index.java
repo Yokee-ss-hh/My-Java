@@ -376,7 +376,90 @@
         // The above mentioned formulas are all applicable to float and double values also...
                 
         ******************************************************************************************************************************
-        // 
+        
+        // Relational Operators :  > , < , >= , <= , == and !=
+        // <--- == operator, equals() method works differently on primitive data types and reference data types --->
+        // https://stackoverflow.com/questions/1586223/how-does-the-tostring-equals-object-methods-work-differently-or-similar
+        // To Compare Strings In Java : https://stackoverflow.com/questions/513832/how-do-i-compare-strings-in-java
+        // For the primitive types, == compares the 2 datatypes stores same values or not, We cannot use equals() method on primitive types, that means we cannot
+        // call equals() and toString() methods on primitive types.
+        // For Regular reference types(like Strings and user-defined classes/objects), == checks whether 2 objects are pointing to same memory address or not
+        // and equals() method checks whether these 2 objects have same values or not.
+        // == some times wont work on Wrapper class objects also...
+        // == Works on Wrapper class objects if we compare 1 wrapper object with 1 primitive datatype 
+        
+        byte b1 = 21;
+
+        int i1 = 21;
+
+        Byte b2 = b1;
+
+        Integer i2 = i1;
+
+        System.out.println(b1 == i1); // true
+        System.out.println(b1 == b2); // true
+        System.out.println(i1 == i2); // true
+        // System.out.println(b2 == i2); // Error : Operator cannot be applied to Byte and Integer
+        System.out.println(b1 == i2); // true
+        System.out.println(b2 == i1);
+
+        // From above results, primitive types won't care about their types and only care about their stored values
+        // Object types do care about their types when comparing over ==
+        // And, 2 wrapper objects cannot be compared on == . i.e, b2 and i2 cannot be compared on == as they both have diff types
+
+        // Object and primitive variables of same datatype can be compared on == , i.e(b1 and b2 , i1 and i2)
+        // Object and primitive variables of diff datatype also be compared on ==, i.e,(b1 and i2, i1 and b2)
+
+        // Let's move to equals()
+        // System.out.println(b1.equals(b2)); raises error as b1 is not an object
+        //System.out.println(i1.equals(b1); raises error as i1 is not an object
+
+        System.out.println(b2.equals(b1)); // returns true as b2 is an object to use equals() method
+        System.out.println(i2.equals(i1)); // returns true
+        System.out.println(b2.equals(i2)); // returns false because both are not same data types to compare
+        System.out.println(i2.equals(b2)); // returns false because both are not same data types to compare
+        System.out.println(b2.equals(i1)); // returns false because both are not same data types to compare
+        System.out.println(i2.equals(b1)); // returns false because both are not same data types to compare
+
+        // NOTE : equals() method works only if 2 variables are of same data type and left operand should be an object.
+ 
+        // For the other Relational Operators other than '==', i.e, >, <, >=, <=, !=  
+        // We can compare 2 variables even they are Objects of 2 different types(see in line 441), but in line 402 we can't use '==' on Byte and Integer Objects.
+       
+        byte b1 = 21;
+
+        int i1 = 21;
+
+        int i3 = 55;
+
+        Byte b2 = b1;
+
+        Integer i2 = i1;
+
+        System.out.println(b1 < i3);
+        System.out.println(b2 <= i1);
+        System.out.println(b2 <= i2);
+        System.out.println(i3 > b1);
+        System.out.println(i2 < i3);
+        ******************************************************************************************************************************
+        
+        
+        
+
+        
+
+        
+        
+        
+
+        
+        
+        
+        
+        
+        
+        
+        
         
 
          
