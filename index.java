@@ -392,16 +392,16 @@
 
         int i1 = 21;
 
-        Byte b2 = b1;
+        Byte b2 = b1; // or directly assign 21 without reference from b1, results will be same 
 
-        Integer i2 = i1;
+        Integer i2 = i1; // or directly assign 21 without reference from i1, results will be same
 
         System.out.println(b1 == i1); // true
         System.out.println(b1 == b2); // true
         System.out.println(i1 == i2); // true
         // System.out.println(b2 == i2); // Error : Operator cannot be applied to Byte and Integer
         System.out.println(b1 == i2); // true
-        System.out.println(b2 == i1);
+        System.out.println(b2 == i1); // true
 
         // From above results, primitive types won't care about their types and only care about their stored values
         // Object types do care about their types when comparing over ==
@@ -422,6 +422,22 @@
         System.out.println(i2.equals(b1)); // returns false because both are not same data types to compare
 
         // NOTE : equals() method works only if 2 variables are of same data type and left operand should be an object.
+
+        
+        Byte b = 21;
+
+        Byte i = 21;
+
+        Byte b1 = 31;
+
+        Byte b2 = 41;
+
+        System.out.println(b == i); // true
+
+        System.out.println(b1 == b2); // false
+
+        // In case of wrapper objects == returns true only if both values and datatypes of 2 operands is same. If any of these 2 rules violate it returns false
+        // Look from line 427 to 437 to understand the above line.
  
         // For the other Relational Operators other than '==', i.e, >, <, >=, <=, !=  
         // We can compare 2 variables even they are Objects of 2 different types(see in line 441), but in line 402 we can't use '==' on Byte and Integer Objects.
