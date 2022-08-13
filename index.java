@@ -442,7 +442,50 @@
         System.out.println(i3 > b1);
         System.out.println(i2 < i3);
         ******************************************************************************************************************************
+        // Logical Operators : &&, || and ! (and, or and not)
         
+        byte b = 23;
+
+        int i = 4573;
+
+        if (!(b % 2 == 0)) {
+            System.out.println("b is odd number");
+        }
+        if(b % 2 != 0 && i % 2 != 0) {
+            System.out.println("b and i are odd numbers");
+        }
+        if (20 % 2 != 0 || i % 2 != 0) {
+            System.out.println("Either of 2 conditions says one is odd");
+        }
+      
+        ******************************************************************************************************************************
+        // Ternary / Conditional Operator
+        
+        // Syntax : variable = Expression1 ? Expression2: Expression3
+                
+        int a = 20;
+
+        int b = 30;
+
+        int max = (a > b) ? a : b;
+
+        System.out.println("maximum in between a and b is :" + max); // o/p : maximum in between a and b is : 30
+       
+        // Ternary operator is basically an if-else loop 
+        // if (a > b){
+        //    max = a;
+        // } 
+        // else {
+        //   max = b;
+        // }
+        // Instead of writing the whole if-else we can simply use ternary/ conditional operator
+
+        ******************************************************************************************************************************
+        
+
+
+        
+         
         
         
 
