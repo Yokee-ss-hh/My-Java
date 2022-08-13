@@ -381,6 +381,7 @@
         // <--- == operator, equals() method works differently on primitive data types and reference data types --->
         // https://stackoverflow.com/questions/1586223/how-does-the-tostring-equals-object-methods-work-differently-or-similar
         // To Compare Strings In Java : https://stackoverflow.com/questions/513832/how-do-i-compare-strings-in-java
+        // == vs equals() on strings (got to end of this page for best example) : https://stackoverflow.com/questions/7520432/what-is-the-difference-between-and-equals-in-java
         // For the primitive types, == compares the 2 datatypes stores same values or not, We cannot use equals() method on primitive types, that means we cannot
         // call equals() and toString() methods on primitive types.
         // For Regular reference types(like Strings and user-defined classes/objects), == checks whether 2 objects are pointing to same memory address or not
