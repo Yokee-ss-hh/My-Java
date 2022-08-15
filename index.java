@@ -531,18 +531,54 @@
         // !       Logical complement operator inverts the value of a boolean
         
         
+        int a = 10;
+
+        int b = +a;
+
+        System.out.println(b); // 10
+
+        int c = -a;
+
+        System.out.println(c); // -10
+
+        int a = 10;
+
+        int b = ++a; // pre increment
+
+        System.out.println(a); // 10
+        System.out.println(b); // 11
+
+        int c = 20;
+
+        int d = c++;  // post increment
+
+        System.out.println(d); // 20
+        System.out.println(c); // 21
+
+        // Similarly java has post-decrement and pre-decrement
+        int a = 10;
+
+        int b = --a;
+
+        System.out.println(a); // 9
+        System.out.println(b); // 9
+
+        int c = 20;
+
+        int d = c--;
+
+        System.out.println(d); // 20
+        System.out.println(c); // 19
+
+        boolean b = false;
+
+        if (!b)
+        {
+            System.out.println("HELLO");
+        }
         
-        
-       
-         
-         
+        ******************************************************************************************************************************
+        // Bitwise Operators : &(AND), |(OR) , ^(XOR), ~(COMPLIMENT) 
         
 
-
-        
-                
-                
-                
-                
-                
                 
