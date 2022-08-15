@@ -147,6 +147,7 @@
          // Similarly for float, double, long , char, byte, short we gets the same error with respective names
                 
         ----------------------------------------------------------------------------------------------------------------------
+         // Java Operators Guide By Oracle : https://docs.oracle.com/javase/tutorial/java/nutsandbolts/opsummary.html
         **********************************************************************************************************************
          // Arithmetic Operators : +, -, *, /, % , ++, --
          
@@ -377,7 +378,7 @@
                 
         ******************************************************************************************************************************
         
-        // Relational Operators :  > , < , >= , <= , == and !=
+        // Relational Operators :  > , < , >= , <= , == and != [greater than, less than, greater than equals to,less than equals to, double equals to, not equals to ]
         // <--- == operator, equals() method works differently on primitive data types and reference data types --->
         // https://stackoverflow.com/questions/1586223/how-does-the-tostring-equals-object-methods-work-differently-or-similar
         // To Compare Strings In Java : https://stackoverflow.com/questions/513832/how-do-i-compare-strings-in-java
@@ -459,7 +460,9 @@
         System.out.println(i3 > b1);
         System.out.println(i2 < i3);
         ******************************************************************************************************************************
-        // Logical Operators : &&, || and ! (and, or and not)
+        // Logical Operators : &&, || and ! (Logical and, Logical or and Logical not), Acc to oracle there is no '!' under logical operators
+        // '!' comes under unary operators.
+        // Ternary Operator comes under Logical Operators.
         
         byte b = 23;
 
@@ -498,51 +501,48 @@
         // Instead of writing the whole if-else we can simply use ternary/ conditional operator
 
         ******************************************************************************************************************************
+        // Assignment Operator : '='
+        // Compound assignment operators : +=, -=, *=, /=, %= , <<=, >>=, &=, |=, ^=, ~= 
+        // x+=3 and x=x+3 gives same result but for x+=3 java does type casting but for x = x+3, we need to do casting
         
+        byte b = 21;
 
+        //b = b + 3;
+        System.out.println(((Object)(3)).getClass()); // proof for 3 is an integer even though 3 comes in range of byte  : o/p is class java.lang.Integer
+        // Here, on the right side we have b + 3, b is of type 'byte' and 3 is of type 'int'
+        // So, b+3 is 'int' finally . b = b+3 => we are assigning b+3 which is an integer to 'b'
+        // which is of type 'byte'.This is not possible, so we need to typecast it to byte using
+        // narrow casting as,
+        b = (byte)(b+3);
+        System.out.println(b);
 
-        
-         
-        
-        
+        b +=3;
+        // In this compound assignment, there is no need to do type casting as java internally
+        // perform casting to the type of 'b'.That is java internally performs b = b+3 for b+=3 , as soon as it knows that b+3 gives integer
+        // It checks for the type of 'b' and converts the b+3 type into type of b.
+        // So, Using compound assignments is much beneficiary than using manual process.
 
-        
-
-        
-        
-        
-
-        
-        
-        
+        ******************************************************************************************************************************
+        // Unary Operators :
+        // +       Unary plus operator; indicates positive value (numbers are positive without this, however)
+        // -       Unary minus operator; negates an expression
+        // ++      Increment operator; increments a value by 1
+        // --      Decrement operator; decrements a value by 1
+        // !       Logical complement operator inverts the value of a boolean
         
         
         
         
-        
-        
-
-         
-
-
-               
-          
-                 
-         
-                 
-         
-                 
-         
-
+       
          
          
-         
+        
 
 
         
-        
-          
-               
-        
-        
-        
+                
+                
+                
+                
+                
+                
