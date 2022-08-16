@@ -580,5 +580,55 @@
         ******************************************************************************************************************************
         // Bitwise Operators : &(AND), |(OR) , ^(XOR), ~(COMPLIMENT) 
         
+        int a = 5; // 0101
+
+        int b = 2; // 0010
+
+        var c = a & b; // 0000 = 0
+
+        var d = a | b; // 0111 = 7
+
+        var e = a ^ b; // 0111 = 7
+
+        var f = ~a; // ~a = 1010 = 10, But java returns 2's complement of 10 i.e, -6
+        // Formula would be ~num = -(num+1)
+
+        System.out.println(c); // 0
+        System.out.println(d); // 7
+        System.out.println(e); // 7
+        System.out.println(f); // -6
+ 
+        ******************************************************************************************************************************
+        // Look at this best video first : https://www.youtube.com/watch?v=4qH4unVtJkE
+        // The above video explains how computers uses 2's complement of integers while calculating internally.....
+        // Bitwise Shift Operators <<(signed left shift), >>(signed right shift) and >>>(right side shift filled with zeroes)
+
+        int a = 32;
+        int b = 3;
+
+        System.out.println(a << b); // 256
+        System.out.println(Integer.toBinaryString(a << b)); // 100000000
+        // a << b = a * (2 power b)
+
+        System.out.println(a >> b); // 4
+        System.out.println(Integer.toBinaryString(a >> b)); // 100
+        // a >> b = a / (2 power b)
+
+        System.out.println(a >>> b); // 4
+        System.out.println(Integer.toBinaryString(a >>> b)); // 100
+
+        ****************************************************************************************************************
+        // instance of operator :
+        // The instanceof operator in Java is used to check whether an object is an instance of a particular class or not.
+        
+        Integer a = 23;
+        System.out.println(a instanceof Integer); // true
+
+        String b = "hello";
+        System.out.println(b instanceof String); // true
+
+        *****************************************************************************************************************
+        
+        
 
                 
