@@ -628,7 +628,150 @@
         System.out.println(b instanceof String); // true
 
         *****************************************************************************************************************
+        // Wrapper Classes
         
+        byte a = 21;
+
+        short b = 355;
+
+        int c = 4321;
+
+        long d = 821317236L;
+
+        float e = 32.211f;
+
+        double f = 122.31312;
+
+        char g = 'H';
+  
+        boolean h= false;
+
+        // AutoBoxing : primitive data types -> Objects
+        // The automatic conversion of primitive data type into its corresponding wrapper class is known as autoboxing
+        // From java5, no need to use valueOf() in autoboxing.
+
+        Byte a1 = a;
+        Short b1 = b;
+        Integer c1 = c;
+        Long d1 = d;
+        Float e1 = e;
+        Double f1 = f;
+        Character g1 = g;
+        Boolean h1 = h;
+        
+        System.out.println(a1); // 21
+        System.out.println(b1); // 355
+        System.out.println(c1); // 4321
+        System.out.println(d1); // 821317236
+        System.out.println(e1); // 32.211
+        System.out.println(f1); // 122.31312
+        System.out.println(g1); // H
+
+        // Using above method,we can only assign similar type of data types to the same type of wrapper class object
+        // That means, I can assign variable 'a' to 'a1', 'b' to 'b1' only..
+        // If i assign 'a' to 'c1' , i gets error because in the above-mentioned process of autoboxing,
+        // implicit type-casting is not done by the java
+        // If we want we can explicitly type cast and assign as,
+        Integer c11 = (int)a;
+
+        // I type cast byte variable 'a' into 'int' to store that in Integer wrapper object.
+
+        // If we want java to automatically typecast so that we can provide any type of value to wrapper class
+        // objects, then we need to use valueOf() method.
+        
+        Byte a2 = Byte.valueOf(a);
+        System.out.println(a2); // 21
+
+        Short b2 = Short.valueOf(a);
+        System.out.println(b2); //21
+
+        Integer c2 = Integer.valueOf(a);
+        System.out.println(c2); // 21
+
+        // In the above 3 examples, we passed variable 'a' into Byte,Short and Integer Objects
+        // Let's try to store large variables into small variables
+        // i.e, Let's try to pass int,short into Byte wrapper object
+
+        // Byte a4 = Byte.valueOf(b);
+
+        // Byte a5 = Byte.valueOf(c);
+
+        // The above 2 lines if un-commented gives error as we are trying to store
+        // large variables in the small variables, if we want to do, we need to narrow cast them before storing
+
+        Byte a4 = Byte.valueOf((byte)b);
+        Byte a5 = Byte.valueOf((byte)c);
+
+        System.out.println(a4); // 99
+        System.out.println(a5); // -31
+ 
+        // Unboxing : Converting objects into primitive data types
+
+        byte x1 = a1;
+        short x2 = b1;
+        int x3 = c1;
+        long x4 = d1;
+        float x5 = e1;
+        double x6 = f1;
+        char x7 = g1;
+
+        System.out.println(x1); // 21
+        System.out.println(x2); // 355
+        System.out.println(x3); // 4321
+        System.out.println(x4); // 821317236
+        System.out.println(x5); // 32.211
+        System.out.println(x6); // 122.31312
+        System.out.println(x7); // H
+
+        // ---------------Some important methods of wrapper objects------------------------
+        
+        System.out.println(a1.byteValue()); // 21
+        System.out.println(a1.shortValue()); // 21
+        System.out.println(a1.intValue()); // 21
+        System.out.println(a1.floatValue()); // 21.0
+        System.out.println(a1.doubleValue()); // 21.0
+        System.out.println((a1.toString()).length()); // a1.toString() returns "21" with length as 2
+        System.out.println(a1.getClass()); // class java.lang.Integer
+        System.out.println(a1.hashCode()); // 21
+        Byte kk = 12;
+        System.out.println(a1.equals(a)); // compares whether the values are same or not , returns boolean
+        System.out.println(a1.compareTo(kk)); // if a1<kk it returns a1-kk which is -ve, if a1==kk, it returns 0 else a1-kk which is +ve
+        // Even a1 is Byte object we can derive every data type as o/p as written code above....
+        
+        System.out.println(b1.byteValue()); // 99 
+        System.out.println(b1.shortValue()); // 355
+        System.out.println(b1.intValue()); // 355
+        System.out.println(b1.floatValue()); // 355.0
+        System.out.println(b1.doubleValue()); // 355.0
+        System.out.println((b1.toString()).length()); // a1.toString() returns "355" with length as 3
+        System.out.println(b1.getClass()); // class java.lang.Short
+        System.out.println(b1.hashCode()); // 355
+        // equals() and compareTo() is also supported
+        
+        System.out.println(c1.byteValue()); // -31
+        System.out.println(c1.shortValue()); // 4321
+        System.out.println(c1.intValue()); // 4321
+        System.out.println(c1.floatValue()); // 4321.0
+        System.out.println(c1.doubleValue()); // 4321.0
+        System.out.println((c1.toString()).length()); // a1.toString() returns "4321" with length as 4
+        System.out.println(c1.getClass()); // class java.lang.Integer
+        System.out.println(c1.hashCode()); // 4321
+        // equals() and compareTo() is also supported
+
+        System.out.println(d1.byteValue()); // 116
+        System.out.println(d1.shortValue()); // 20084
+        System.out.println(d1.intValue()); // 821317236
+        System.out.println(d1.floatValue()); // 8.2131715E8
+        System.out.println(d1.doubleValue()); // 8.21317236E8
+        System.out.println((d1.toString()).length()); // a1.toString() returns "821317236" with length as 9
+        System.out.println(d1.getClass()); // class java.lang.Long
+        System.out.println(d1.hashCode()); // 821317236
+        // equals() and compareTo() is also supported
+
+        // -----------Some important methods of wrapper classes ---------------
         
 
+        
+
+        
                 
