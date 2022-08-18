@@ -61,6 +61,8 @@
 
         // default = '\u0000'
         // 16 bit / 2 bytes as java supports 16 languages
+        // characters are ranging from 0 to 65,536 (0 to 2 power 32)
+        // We can find all 65,536 unicodes here : https://www.ssec.wisc.edu/~tomw/java/unicode.html
         char c1 = 'f';
         System.out.println(c1); // java prints the character itself unless we typecast it to integer
         System.out.println((int)c1);
