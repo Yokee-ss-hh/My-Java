@@ -778,7 +778,7 @@
         System.out.println(Integer.MIN_VALUE); // -2147483648
         System.out.println(Integer.max(10,20)); // 20
         System.out.println(Integer.min(10,20)); // 10
-
+        System.out.println(Integer.sum(1313131,2312313)); // 3625444
         System.out.println(Integer.hashCode(12)); // 12
 
         System.out.println(Integer.toBinaryString(12)); // 1100
