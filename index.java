@@ -768,7 +768,130 @@
         System.out.println(d1.hashCode()); // 821317236
         // equals() and compareTo() is also supported
 
+        // NOTE : Same like above wrapper class objects, Every object in java has 2 methods, hashCode() and equals().
+        // NOTE : Wrapper class object has "public int hashCode()" method and Wrapper class has static method as "public int hashCode(int value)" which takes an integer as parameter.
+
         // -----------Some important methods of wrapper classes ---------------
+        // All methods are static as we are accessing using class
+        
+        System.out.println(Integer.MAX_VALUE); // 2147483647
+        System.out.println(Integer.MIN_VALUE); // -2147483648
+        System.out.println(Integer.max(10,20)); // 20
+        System.out.println(Integer.min(10,20)); // 10
+
+        System.out.println(Integer.hashCode(12)); // 12
+
+        System.out.println(Integer.toBinaryString(12)); // 1100
+        System.out.println(Integer.bitCount(12)); // 2 , counts number of 1's in binary string.
+        System.out.println(Integer.lowestOneBit(20)); // 4
+        // 20 in binary : 10100, from LSB we need to consider first occurring '1' and need to make every other bit to '0'.
+        // So, 10100 becomes 00100 -> 100 -> 4. So, output is 4.
+        System.out.println(Integer.highestOneBit(20)); // 16
+        // 20 in binary : 10100, from MSB we need to consider first occurring '1' and need to make every other bit to '0'.
+        // So, 10100 becomes 10000 -> 16. So, output is 16.
+        System.out.println(Integer.numberOfLeadingZeros(20)); // 27
+        // 20 in 32 bit binary is 0000 0000 0000 0000 0000 0000 0001 0100
+        // For Leading zeroes, take the first occurring '1' from MSB and count number of
+        // zeroes to the left of it. o/p = 27
+        System.out.println(Integer.numberOfTrailingZeros(20)); // 2
+        // 20 in 32 bit binary is 0000 0000 0000 0000 0000 0000 0001 0100
+        // For trailing zeroes, take the first occurring '1' from LSB and count number of
+        // zeroes to the right of it. o/p = 2
+        System.out.println(Integer.reverse(10)); // 1342177280
+        // 10 = 0000 0000 0000 0000 0000 0000 0000 1010
+        // After Reversing each bit = 0101 0000 0000 0000 0000 0000 0000 0000
+        // Decimal obtained = 1342177280
+        System.out.println(Integer.reverseBytes(10)); // 1677721160
+        // 10 = 0000 0000 0000 0000 0000 0000 0000 1010
+        // After swapping bytes : 0000 1010 0000 0000 0000 0000 0000 0000
+        // Decimal obtained = 167772160
+
+        // NOTE :In reverse we need to swap all bits, In reverseBytes() we are swapping each byte
+
+        System.out.println(Integer.signum(10)); // 1
+
+        System.out.println(Integer.toHexString(10)); // a
+        System.out.println(Integer.toOctalString(10)); // 12
+
+        System.out.println(Integer.TYPE); // int
+
+        System.out.println(Integer.SIZE); // 32
+        System.out.println(Integer.BYTES); // Integer.SIZE / 8 = 4
+
+        System.out.println(Integer.rotateLeft(10,2)); // 40
+        // 10 : 1010 -> 2 bits to left -> .... 1010 00 -> 40
+        System.out.println(Integer.rotateRight(20,2)); // 5
+        // 20 : 0001 0100 -> 2 bits to right -> 0000 0101 -> 5
+
+        System.out.println(Integer.compare(-30,20)); // -1
+        // as 10 < 20 so o/p is -1
+
+        System.out.println(Integer.compareUnsigned(-30,20)); // 1
+        // as 30 > 20 so o/p is 1 , Here we used unsigned so negative signs are ignored
+
+        System.out.println(Integer.divideUnsigned(20,3)); // 6 , Here we should not pass -ve values
+        System.out.println(Integer.remainderUnsigned(20,3)); // 2, No -ve values are allowed
+
+        System.out.println(Integer.valueOf(20)); // 20
+        System.out.println(Integer.valueOf("20")); // 20
+        System.out.println(Integer.valueOf("1010",2)); // 1010 is 10 in decimal
+        System.out.println(Integer.valueOf("16",8)); // 16 is in octal, in integer it is 14, so o/p is 14
+        System.out.println(Integer.valueOf("16",16)); // 16 is hexadecimal number, in integer it is 22, so o/p = 22
+
+        System.out.println(Integer.toString(21)); // returns "21" which is a string
+        // Let's verify using getName() method
+        System.out.println((Integer.toString(21)).getClass()); // class java.lang.String
+        System.out.println(Integer.toString(10,2)); // 1010 , means it takes 10 which is a decimal
+        // and converts it into base-2 which is binary and returns it
+        System.out.println(Integer.toString(10,8)); // 12
+        // Converts 10 into octal and returns it
+        System.out.println(Integer.toString(16,16)); // 10
+        // Converts 16 into hexadecimal number and returns it
+        // NOTE : toString() takes UnSigned numbers also...Both -ve and +ve
+
+        System.out.println(Integer.toUnsignedString(24)); // 24
+        System.out.println(Integer.toUnsignedString(24,2)); // 11000
+        System.out.println(Integer.toUnsignedString(24,8)); // 30
+        System.out.println(Integer.toUnsignedString(24,16)); // 18
+
+        System.out.println(Integer.toUnsignedLong(4121425));
+        Long zuza = Integer.toUnsignedLong(4121425);
+        System.out.println(zuza.getClass()); // class java.lang.Long
+
+        // NOTE : Actually, valueOf uses parseInt internally.
+        // The difference is parseInt returns an int primitive, while valueOf returns an Integer object.
+
+        int a = Integer.parseInt("21");
+        System.out.println(a); // 21
+
+        // valueOf() uses parseInt() internally as:
+        // public static Integer valueOf(String s, int radix) throws NumberFormatException {
+        //    return Integer.valueOf(parseInt(s, radix));
+        //}
+        // Look this link for more : https://www.google.com/search?q=parseInt()+vs+valueOf()+stackverlfow
+
+        System.out.println(Integer.parseInt("1010",2)); // 10
+        System.out.println(Integer.parseInt("16",8)); // octal number 16 into integer gives 14
+        System.out.println(Integer.parseInt("16",16)); // hexadecimal number 16 into integer gives 22
+
+        String characterSequence = "123456";
+        System.out.println(Integer.parseInt(characterSequence,0,characterSequence.length()-4,10));
+        // 12
+
+        // Line 95 is one overload parseInt()
+        // Lines 104,105 and 106 is second overload for parseInt()
+        // Line 109 is the final overload for parseInt()
+
+        // parseInt() takes -ve values also as it is by default in signed
+        System.out.println(Integer.parseInt("-12")); // -12
+        System.out.println(Integer.parseInt("-4321",0,4,10)); // -432
+        // For, +ve values use parseUnsignedInt() which have 3 overloads
+
+        System.out.println(Integer.parseUnsignedInt("33")); // 33
+        // passing negative integer strings to parseUnsignedInt() raises errors
+        // Similarly we can use all 3 overloads for +ve integer strings using parseUnsignedInt() method
+
+         
         
 
         
